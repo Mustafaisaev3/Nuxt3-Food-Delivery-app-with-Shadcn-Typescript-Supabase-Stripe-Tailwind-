@@ -4,7 +4,9 @@
         <!-- Sidebar -->
         <Sidebar />
     </div>
-    <main class="pl-[100px] pb-10">
+    <main class="h-full pl-[100px] pb-10">
+        <!-- Header -->
+        <Header />
         <slot />
     </main>
   </div>
@@ -12,6 +14,8 @@
 
 <script setup lang='ts'>
 import Sidebar from "~/components/Sidebar.vue";
+import Header from "~/components/Header.vue";
+
 
 </script>
 
