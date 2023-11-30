@@ -13,9 +13,9 @@
                 <IconCSS name="mdi:home" size='25' color='white' class="text-[white] hover:text-[#e6e6e6]"/>
             </NuxtLink>
             <NuxtLink 
-              to='/pizza' 
+              to='/foods' 
               class="active w-full flex justify-center items-center py-2"
-              :class="{'border-l-4 border-[#c7def0]': isRouteActive('/pizza')}"
+              :class="{'border-l-4 border-[#c7def0]': isRouteActive('/foods')}"
             >
                 <IconCSS name="mdi:pizza" size='25' color='white' class="text-[white] hover:text-[#e6e6e6]"/>
             </NuxtLink>

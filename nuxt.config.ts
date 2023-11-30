@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
+    'nuxt-swiper'
   ],
   // @ts-ignore
   components: [

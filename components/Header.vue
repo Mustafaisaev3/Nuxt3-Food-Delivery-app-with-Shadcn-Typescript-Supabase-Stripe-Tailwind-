@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[100px] border-b-[1px] border-[#e2e8f0] p-10 flex items-center justify-between">
+  <div class="bg-white w-full h-[100px] border-b-[1px] border-[#e2e8f0] p-10 flex items-center justify-between">
     <div class="text-[20px] font-bold">Header</div>
     <div class="flex items-center gap-6">
         <SearchInput placeholder="Search"/>
