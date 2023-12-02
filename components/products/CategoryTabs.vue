@@ -13,7 +13,7 @@
 
 <script setup lang='ts'>
 import { ref, watch } from 'vue'
-import { categories, type CategoryType } from '~/data/categories.ts'
+import { categories, type CategoryType } from '~/data/categories'
 import CategoryTab from "./CategoryTab.vue";
 
 const emit = defineEmits(['changeActiveCategory'])

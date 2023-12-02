@@ -70,8 +70,8 @@ import {
   SelectTrigger,
   SelectValue, 
 } from '~/components/ui/select'
-import { products } from '~/data/products.ts'
-import { categories, type CategoryType } from '~/data/categories.ts'
+import { products } from '~/data/products'
+import { categories, type CategoryType } from '~/data/categories'
 
 const activeCategory = ref(categories[0])
 const filteredProducts = ref(products)

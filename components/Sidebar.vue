@@ -20,18 +20,18 @@
                 <IconCSS name="mdi:pizza" size='25' color='white' class="text-[white] hover:text-[#e6e6e6]"/>
             </NuxtLink>
             <NuxtLink 
-              to='/user' 
-              class="w-full flex justify-center items-center py-2"
-              :class="{'border-l-4 border-[#c7def0]': isRouteActive('/user')}"
-            >
-                <IconCSS name="mdi:account" size='25' color='white' class="text-[white] hover:text-[#e6e6e6]"/>
-            </NuxtLink>
-            <NuxtLink 
               to='/orders' 
               class="w-full flex justify-center items-center py-2"
               :class="{'border-l-4 border-[#c7def0]': isRouteActive('/orders')}"
             >
                 <IconCSS name="mdi:clipboard-clock" size='25' class="text-[white] hover:text-[#e6e6e6]"/>
+            </NuxtLink>
+            <NuxtLink 
+              to='/user' 
+              class="w-full flex justify-center items-center py-2"
+              :class="{'border-l-4 border-[#c7def0]': isRouteActive('/user')}"
+            >
+                <IconCSS name="mdi:account" size='25' color='white' class="text-[white] hover:text-[#e6e6e6]"/>
             </NuxtLink>
             <NuxtLink 
               to='/setting' 

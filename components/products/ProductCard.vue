@@ -35,7 +35,8 @@
 
 <script setup lang='ts'>
 import { Button } from "../ui/button";
-import { type ProductType } from '~/data/products.ts'
+import { type ProductType } from '~/data/products'
+import { Card } from '../ui/card'
 
 interface ProductCardInterface {
     product: ProductType

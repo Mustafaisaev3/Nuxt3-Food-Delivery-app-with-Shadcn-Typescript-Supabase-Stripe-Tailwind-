@@ -21,7 +21,7 @@
 <script setup lang="ts">
 interface HeadingProps {
   title: string;
-  icon: string;
+  icon?: string;
   iconColor?: string;
   bgColor?: string;
   link?: string;
