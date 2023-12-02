@@ -17,16 +17,7 @@
       :class="'mt-5'"
     />
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-rows-2 gap-3">
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      <ProductCard v-for="product in products" :key="product.id" :product="product"/>
     </div>
   </div>
 </template>
@@ -34,6 +25,7 @@
 <script setup lang='ts'>
 import Heading from '~/components/shared/Heading.vue'
 import ProductCard from '~/components/products/ProductCard.vue' 
+import { products } from '~/data/products.ts'
 
 const banners = [
     'https://img.pikbest.com/origin/06/08/44/49wpIkbEsTbsB.png!w700wp',

@@ -12,8 +12,11 @@ export default defineNuxtConfig({
       // this is required else Nuxt will autoImport `.ts` file
       extensions: ['.vue'],
       // prefix for your components, eg: UiButton
-      prefix: ''
+      prefix: '',
     },
   ],
   devtools: { enabled: true },
+  imports: {
+    dirs: ['utils/*.ts'],
+  },
 })

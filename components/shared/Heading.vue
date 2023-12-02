@@ -1,5 +1,6 @@
 <template>
     <div class="flex items-center mb-8" :class="`${headingClass}`">
+      <slot name="leftContent"></slot>
       <div v-if="icon" :class="`p-2 w-fit rounded-md ${bgColor}`">
         <Icon :name="icon" :class="`w-10 h-10 ${iconColor}`" />
       </div>
@@ -13,6 +14,7 @@
           </div>
         </NuxtLink>
       </div>
+      <slot name="rightContent"></slot>
     </div>
 </template>
   

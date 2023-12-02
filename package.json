@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.10.1",
+    "@types/uuid": "^9.0.7",
     "nuxt": "^3.8.2",
     "nuxt-icon": "^0.6.6",
     "typescript": "^5.3.2",
@@ -26,6 +27,7 @@
     "nuxt-swiper": "^1.2.2",
     "radix-vue": "^1.2.3",
     "tailwind-merge": "^2.0.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^9.0.1"
   }
 }

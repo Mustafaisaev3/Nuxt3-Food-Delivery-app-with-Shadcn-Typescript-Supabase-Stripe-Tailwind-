@@ -4,11 +4,11 @@
         <!-- Sidebar -->
         <Sidebar />
     </div>
-    <main class="h-full w-full md:pl-[100px] pb-10 relative">
+    <main class="h-full md:pl-[100px] pb-10">
         <!-- Header -->
         <Header />
         <div class="p-5 md:p-10">
-            <slot />
+          <slot />
         </div>
     </main>
   </div>
