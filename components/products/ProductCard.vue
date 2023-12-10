@@ -15,13 +15,20 @@
                     <span class="text-[14px]">{{ product.rating }}</span>
                 </div>
                 <div class="flex items-center gap-1 pt-1">
-                    <span class="text-[14px]">${{ product.price }}</span>
+                    <span class="text-[14px]">${{ product.price.price }}</span>
                 </div>
             </div>
         </div>
         <div class="w-full pt-2 flex items-center gap-3 p-2">
             <div class="cursor-pointer">
-                <IconCss name="mdi:fullscreen" size='25'/>
+                <Dialog>
+                    <DialogTrigger as-child>
+                        <IconCss name="mdi:fullscreen" size='25'/>
+                    </DialogTrigger>
+                    <DialogContent class="md:w-auto lg:min-w-[800px] h-full md:h-auto lg:h-[500px] m-0">
+                        <ProductView :product="product" />
+                    </DialogContent>
+                </Dialog>
             </div>
             <Button size="lg" variant="product" class="w-full">
                 Buy
@@ -34,9 +41,19 @@
 </template>
 
 <script setup lang='ts'>
+import ProductView from "../modals/ProductView.vue";
 import { Button } from "../ui/button";
 import { type ProductType } from '~/data/products'
 import { Card } from '../ui/card'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 
 interface ProductCardInterface {
     product: ProductType
