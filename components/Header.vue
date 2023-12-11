@@ -6,7 +6,17 @@
         <div class="flex gap-4">
             <IconCSS name="mdi:bell" size='25' class="text-[#111016]" />
             <IconCSS name="mdi:cog" size='25' class="text-[#111016]"/>
-            <IconCSS name="mdi:cart-outline" size='25' class="text-[#111016]"/>
+            <Sheet>
+              <SheetTrigger as-child>
+                <IconCSS name="mdi:cart-outline" size='25' class="text-[#111016] cursor-pointer"/>
+              </SheetTrigger>
+              <SheetContent class="flex flex-col">
+                <SheetHeader>
+                  <SheetTitle>Cart</SheetTitle>
+                </SheetHeader>
+                <CartView />
+              </SheetContent>
+            </Sheet>
         </div>
         <UserDropdown />
     </div>
@@ -16,6 +26,17 @@
 <script setup>
 import SearchInput from '~/components/SearchInput.vue'
 import UserDropdown from '~/components/UserDropdown.vue'
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
+import CartView from '~/components/drawers/CartView.vue'
 </script>
 
 <style>
