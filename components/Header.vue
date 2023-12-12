@@ -37,6 +37,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import CartView from '~/components/drawers/CartView.vue'
+
 </script>
 
 <style>
