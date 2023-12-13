@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    'nuxt-swiper'
+    'nuxt-swiper',
+    '@pinia/nuxt'
   ],
   // @ts-ignore
   components: [
@@ -18,5 +19,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   imports: {
     dirs: ['utils/*.ts'],
+  },
+  alias: {
+    pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
   },
 })
