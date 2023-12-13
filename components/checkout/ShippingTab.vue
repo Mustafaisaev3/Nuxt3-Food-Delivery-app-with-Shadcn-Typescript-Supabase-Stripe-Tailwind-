@@ -1,6 +1,17 @@
 <template>
-    <label :for="shipping.id" class="shipping-tab-container w-full flex items-center space-x-2 p-4 border border-[#3d3d3d] rounded-sm cursor-pointer">
-        <Checkbox :id="shipping.id" class="shipping-tab" />
+    <label 
+      :for="shipping.id" 
+      class="shipping-tab-container w-full flex items-center space-x-2 p-4 border rounded-sm cursor-pointer"
+      :class="{'border-[red]': error, 'border-[#3d3d3d]': !error}"
+    >
+        <input 
+            :id="shipping.id"
+            :value="shipping.id"
+            v-model="model"
+            v-bind="$attrs"
+            type="radio"
+            class="flex rounded-md outline-none text-sm" 
+        />
         <div
             class="w-full text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex justify-between"
         >
@@ -13,9 +24,21 @@
   </label>
 </template>
 <script setup lang="ts">
-import { Checkbox } from '../ui/checkbox'
+import { ref, computed, defineEmits } from 'vue'
 
-const { shipping } = defineProps(['shipping'])
+const { shipping, modelValue, error } = defineProps(['shipping', 'modelValue', 'error'])
+
+const emit = defineEmits(["update:modelValue"]);
+
+const model = computed({
+  get() {
+    return modelValue;
+  },
+  set(value) {
+    emit("update:modelValue", value);
+  },
+});
+
 </script>
 
 <style scoped>
