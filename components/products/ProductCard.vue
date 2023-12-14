@@ -30,10 +30,10 @@
                     </DialogContent>
                 </Dialog>
             </div>
-            <Button size="lg" variant="product" class="w-full">
+            <Button size="lg" variant="product" class="w-full" @click="addProductToCart">
                 Buy
             </Button>
-            <div class="cursor-pointer">
+            <div class="cursor-pointer" @click="consoleCart">
                 <IconCss name="mdi:cards-heart" size='25' class="text-[#e54343]"/>
             </div>
         </div>
@@ -55,11 +55,23 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 
+import { useCart } from "~/store/cartStore";
+import { storeToRefs } from "pinia";
+
 interface ProductCardInterface {
     product: ProductType
 }
 
 const { product } = defineProps<ProductCardInterface>()
+const { addToCart } = useCart()
+const { products } = storeToRefs(useCart())
+
+const addProductToCart = () => {
+    addToCart(product, 1)
+}
+
+const consoleCart = () => console.log(products)
+
 </script>
 
 <style>

@@ -6,13 +6,18 @@
         <div class="flex gap-4">
             <IconCSS name="mdi:bell" size='25' class="text-[#111016]" />
             <IconCSS name="mdi:cog" size='25' class="text-[#111016]"/>
-            <Sheet>
+            <Sheet :open="showCart">
               <SheetTrigger as-child>
-                <IconCSS name="mdi:cart-outline" size='25' class="text-[#111016] cursor-pointer"/>
+                <IconCSS name="mdi:cart-outline" size='25' class="text-[#111016] cursor-pointer" @click="openCart"/>
               </SheetTrigger>
               <SheetContent class="flex flex-col">
                 <SheetHeader>
-                  <SheetTitle>Cart</SheetTitle>
+                  <SheetTitle class="flex justify-between">
+                    <div>Cart</div>
+                    <div class="border-[1px] hover:border-[2px] border-[#464646] rounded-md w-6 h-6 flex items-center justify-center cursor-pointer" @click="closeCart" >
+                      <IconCss name="mdi:close" class="text-sm" />
+                    </div>
+                  </SheetTitle>
                 </SheetHeader>
                 <CartView />
               </SheetContent>
@@ -36,7 +41,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { X } from 'lucide-vue-next'
 import CartView from '~/components/drawers/CartView.vue'
+import { useUi } from '~/store/uiStore'
+import { storeToRefs } from 'pinia';
+
+const { openCart, closeCart } = useUi()
+const { showCart } = storeToRefs(useUi())
 
 </script>
 

@@ -61,10 +61,13 @@ import Input from '../ui/input/Input.vue';
 import ShippingTab from '../checkout/ShippingTab.vue'
 import PaymentTab from '../checkout/PaymentTab.vue'
 
+import { useUi } from '~/store/uiStore'
+
 import { PaymentMethods } from '~/data/payment'
 import { ShippingMethods } from '~/data/shipping'
 
 const { toast } = useToast()
+const { closeCart } = useUi()
 
 enum STEPS {
     DELIVERY_OPTIONS = 0,
@@ -152,6 +155,7 @@ const onNext = () => {
         ) {
             return
         } else {
+            closeCart()
             checkout()
             return
         }

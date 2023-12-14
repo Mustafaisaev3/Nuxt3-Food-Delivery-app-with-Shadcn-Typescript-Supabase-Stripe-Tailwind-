@@ -18,9 +18,10 @@
 <script setup lg="ts">
 import { ref, watch } from 'vue'
 
+const { quantity } = defineProps(['quantity'])
 const emit = defineEmits(['getCount'])
 
-const count = ref(0)
+const count = ref(quantity ? quantity : 0)
 
 const inc = () => {
     count.value = count.value + 1
