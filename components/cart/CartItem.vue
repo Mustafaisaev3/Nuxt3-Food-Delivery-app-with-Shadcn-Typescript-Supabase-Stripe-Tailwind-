@@ -2,7 +2,7 @@
     <div class="w-full h-auto border-b-[1px] border-[#a5a5a5] py-4 flex items-center gap-3 pr-2">
         <div class="image-container w-[80px] h-[80px] rounded-md p-2 relative">
             <img :src="product.image" alt="" class="w-full h-full object-contain">
-            <div class="delete-item absolute left-0 top-0 w-full h-full bg-[#00000059] rounded-md cursor-pointer hidden">
+            <div class="delete-item absolute left-0 top-0 w-full h-full bg-[#00000059] rounded-md cursor-pointer hidden" @click="deleteProductFromCart">
                 <IconCSS name="mdi:close-circle" class="text-2xl text-white" />
             </div>
         </div>
@@ -18,10 +18,17 @@
 </template>
 <script setup lang="ts">
 import CartCounter from './CartCounter.vue'
+import { useCart } from "~/store/cartStore";
+
 const { product } = defineProps(['product'])
 
+const { deleteFromCart } = useCart()
+const deleteProductFromCart = () => {
+    deleteFromCart(product.id)
+}
+
 const productPrice = product.price.salePrice ? product.price.salePrice : product.price.price
-const totalPrice = productPrice * product.quantity
+const totalPrice = (productPrice * product.quantity).toFixed(2)
 
 </script>
 <style scoped>

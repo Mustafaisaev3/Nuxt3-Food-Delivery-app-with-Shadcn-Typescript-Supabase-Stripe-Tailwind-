@@ -40,5 +40,21 @@ export const useCart = defineStore({
             }
         },
 
+        deleteFromCart (id) {
+            let targetProduct = this.products.find((productItem) => {
+                return productItem.id == id
+            })
+
+            if (!targetProduct) {
+                return
+            }
+            
+            const filteredProductsArr = this.products.filter((productItem) => {
+                return productItem.id != id
+            })
+
+            this.products = [...filteredProductsArr]
+        }
+
     }
 })
