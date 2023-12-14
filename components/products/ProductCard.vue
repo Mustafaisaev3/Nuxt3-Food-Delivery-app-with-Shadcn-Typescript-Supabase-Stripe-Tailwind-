@@ -55,19 +55,23 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 
-import { useCart } from "~/store/cartStore";
 import { storeToRefs } from "pinia";
+import { useUi } from "~/store/uiStore";
+import { useCart } from "~/store/cartStore";
+
+const { addToCart } = useCart()
+const { addNotification } = useUi()
 
 interface ProductCardInterface {
     product: ProductType
 }
 
 const { product } = defineProps<ProductCardInterface>()
-const { addToCart } = useCart()
 const { products } = storeToRefs(useCart())
 
 const addProductToCart = () => {
     addToCart(product, 1)
+    addNotification({type: 'success', message: 'Product added to cart'})
 }
 
 const consoleCart = () => console.log(products)

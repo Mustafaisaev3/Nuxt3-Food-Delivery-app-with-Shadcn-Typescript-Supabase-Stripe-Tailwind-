@@ -30,7 +30,7 @@
                 <Counter @getCount="setProductCount" />
                 <div>
                     <Button v-if="!productCount" :variant="'green'" class="w-full" disabled>Add to Cart</Button>
-                    <Button v-else :variant="'green'" class="w-full">Add to Cart</Button>
+                    <Button v-else :variant="'green'" class="w-full" @click="addProductToCart">Add to Cart</Button>
                 </div>
             </div>
         </div>
@@ -39,16 +39,22 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useCart } from '~/store/cartStore'
 import Counter from '~/components/shared/Counter.vue'
 import Button from '../ui/button/Button.vue';
 import OptionTabs from '../shared/OptionTabs.vue';
 
+const { addToCart } = useCart()
 const { product } = defineProps(['product'])
 
 const productCount = ref(0)
 
 const setProductCount = (count: number) => {
     productCount.value = count
+}
+
+const addProductToCart = () => {
+    addToCart(product, productCount.value)
 }
 
 </script>

@@ -11,12 +11,14 @@
           <slot />
         </div>
     </main>
+    <Notification />
   </div>
 </template>
 
 <script setup lang='ts'>
 import Sidebar from "~/components/Sidebar.vue";
 import Header from "~/components/Header.vue";
+import Notification from "~/components/ui/notification/Notification.vue";
 
 
 </script>
