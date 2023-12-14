@@ -10,7 +10,7 @@
             <h2 class="text-[#262626] text-xl font-semibold uppercase">{{ product.name }}</h2>
             <div class="text-[gray] text-base">Unit price: ${{ productPrice }} </div>
             <div class="w-full flex justify-between items-center">
-                <CartCounter :quantity="product.quantity" />
+                <CartCounter :quantity="product.quantity" :id="product.id"/>
                 <div class="font-semibold">${{ totalPrice }}</div>
             </div>
         </div>
@@ -22,13 +22,18 @@ import { useCart } from "~/store/cartStore";
 
 const { product } = defineProps(['product'])
 
+const productPrice = computed(() => {
+    return product.price.salePrice ? product.price.salePrice : product.price.price
+})
+
+const totalPrice = computed(() => {
+    return (productPrice.value * product.quantity).toFixed(2)
+})
+
 const { deleteFromCart } = useCart()
 const deleteProductFromCart = () => {
     deleteFromCart(product.id)
 }
-
-const productPrice = product.price.salePrice ? product.price.salePrice : product.price.price
-const totalPrice = (productPrice * product.quantity).toFixed(2)
 
 </script>
 <style scoped>

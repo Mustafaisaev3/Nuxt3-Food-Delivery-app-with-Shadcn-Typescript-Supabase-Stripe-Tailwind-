@@ -54,7 +54,70 @@ export const useCart = defineStore({
             })
 
             this.products = [...filteredProductsArr]
-        }
+        },
+
+        increaseProductCount (id) {
+            // let targetProduct = this.products.find((productItem) => {
+            //     return productItem.id == id
+            // })
+
+            // if (!targetProduct) {
+            //     return
+            // }
+
+            // const filteredProductsArr = this.products.filter((productItem) => {
+            //     return productItem.id != id
+            // })
+
+            // targetProduct.quantity = targetProduct.quantity + 1
+
+            // this.products = [...filteredProductsArr, targetProduct]
+
+            const targetProductIndex = this.products.findIndex((product => product.id == id));
+
+            if (!targetProductIndex) {
+                return
+            }
+
+            this.products[targetProductIndex].quantity = this.products[targetProductIndex].quantity + 1
+        },
+
+        decreaseProductCount (id) {
+            // let targetProduct = this.products.find((productItem) => {
+            //     return productItem.id == id
+            // })
+
+            // if (!targetProduct) {
+            //     return
+            // }
+
+            // const filteredProductsArr = this.products.filter((productItem) => {
+            //     return productItem.id != id
+            // })
+
+            // if (targetProduct.quantity <= 1) {
+            //     this.products = [...filteredProductsArr]
+            // } else {
+            //     targetProduct.quantity = targetProduct.quantity - 1
+            //     this.products = [...filteredProductsArr, targetProduct]
+            // }
+
+            const targetProductIndex = this.products.findIndex((product => product.id == id));
+
+            if (!targetProductIndex) {
+                return
+            }
+
+            const filteredProductsArr = this.products.filter((productItem) => {
+                return productItem.id != id
+            })
+
+            if (this.products[targetProductIndex].quantity <= 1) {
+                this.products = [...filteredProductsArr]
+            } else {
+                this.products[targetProductIndex].quantity = this.products[targetProductIndex].quantity - 1
+            }
+        },
 
     }
 })

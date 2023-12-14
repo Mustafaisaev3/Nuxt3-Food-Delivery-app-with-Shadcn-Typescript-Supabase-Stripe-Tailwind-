@@ -17,13 +17,17 @@
 </template>
 <script setup lg="ts">
 import { ref, watch } from 'vue'
+import { useCart } from '~/store/cartStore'
 
-const { quantity } = defineProps(['quantity'])
+const { increaseProductCount, decreaseProductCount } = useCart()
+
+const { quantity, id } = defineProps(['quantity', 'id'])
 const emit = defineEmits(['getCount'])
 
 const count = ref(quantity ? quantity : 0)
 
 const inc = () => {
+    increaseProductCount(id)
     count.value = count.value + 1
 }
 
@@ -32,6 +36,7 @@ const dec = () => {
         return
     }
 
+    decreaseProductCount(id)
     count.value = count.value - 1
 }
 
