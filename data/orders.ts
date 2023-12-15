@@ -1,9 +1,23 @@
 import { v4 as uuid } from 'uuid'
-import { ProductType } from "./products"
+import type { ProductType } from "./products"
 
 export type OrderType = {
     id: number | string,
     products: ProductType[],
+    orderInfo: {
+        firstName: string,
+        lustName: string,
+        country: string,
+        city: string,
+        zip: string,
+        street: string,
+        appartment: string,
+        shippingMethod: string,
+        paymentMethod: string,
+        cardNumber: string,
+        expDate: string,
+        cvv: string
+    },
     status: any
 }
 

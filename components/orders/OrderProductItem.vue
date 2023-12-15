@@ -5,7 +5,7 @@
         </div>
         <div class="w-full flex justify-between">
             <div class="font-semibold text-[14px]">{{ product.name }}</div> 
-            <div class="font-bold text-[14px]">${{ product.price }}</div>
+            <div class="font-bold text-[14px]">${{ product.salePrice ? product.salePrice : product.price }}</div>
         </div>
     </div>
 </template>

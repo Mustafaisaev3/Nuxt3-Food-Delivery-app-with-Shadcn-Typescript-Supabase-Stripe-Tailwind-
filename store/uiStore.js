@@ -22,10 +22,8 @@ export const useUi = defineStore({
     actions: {
         openCart () {
             this.showCart = true
-            console.log('openModal')
         },
         closeCart () {
-            console.log('closeModal')
             this.showCart = false
         },
 

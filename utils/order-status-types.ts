@@ -1,5 +1,13 @@
 import check from '../public/images/order-status/check.svg'
 
+type OrderStatusType = {
+    id: any,
+    title: string,
+    color: string,
+    background: string,
+    icon: string
+}
+
 export const OrderStatusTypes = [
     {
         id: '1',
@@ -42,3 +50,4 @@ export const OrderStatusTypes = [
         icon: '/images/order-status/reject.svg'
     },
 ]
+

@@ -54,6 +54,7 @@
 <script setup lang="ts">
 import { ref, reactive, watch } from 'vue'
 import { required, email, minLength, helpers } from '@vuelidate/validators';
+import { v4 as uuid } from 'uuid'
 import { useVuelidate } from '@vuelidate/core';
 import { useToast } from '@/components/ui/toast/use-toast'
 import Button from '../ui/button/Button.vue';
@@ -62,12 +63,19 @@ import ShippingTab from '../checkout/ShippingTab.vue'
 import PaymentTab from '../checkout/PaymentTab.vue'
 
 import { useUi } from '~/store/uiStore'
+import { useCart } from '~/store/cartStore'
+import { useOrders } from '~/store/orderStore'
+import { storeToRefs } from 'pinia';
 
 import { PaymentMethods } from '~/data/payment'
 import { ShippingMethods } from '~/data/shipping'
+import type { OrderType } from '~/data/orders';
+import { OrderStatusTypes } from '~/utils/order-status-types'
 
 const { toast } = useToast()
-const { closeCart } = useUi()
+const { closeCart, addNotification } = useUi()
+const { addOrder } = useOrders()
+const { products } = storeToRefs(useCart())
 
 enum STEPS {
     DELIVERY_OPTIONS = 0,
@@ -95,11 +103,16 @@ watch(step, () => {
 })
 
 const checkout = () => {
-    toast({
-        title: 'Scheduled: Catch up',
-        description: 'Friday, February 10, 2023 at 5:57 PM',
-        variant: 'success'
-    });
+    const order: OrderType = {
+        id: uuid(),
+        products: products.value,
+        orderInfo: formData,
+        status: OrderStatusTypes[0]
+        
+    }
+
+    addOrder(order)
+    addNotification({type: 'success', message: 'Order placed'})
 }
 
 const onBack = () => {
@@ -225,8 +238,9 @@ const rules = computed(() => {
 const v$ = useVuelidate(rules, formData);
 
 const sunmitForm = () => {
-    console.log(formData)
-    console.log(v$)
+    
+    // console.log(formData)
+    // console.log(v$)
 }
 </script>
 <style lang="">
