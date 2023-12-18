@@ -3,9 +3,12 @@
         <div class="w-[40px] h-[40px] flex items-center justify-center">
             <img :src="product.image" class="object-cover" />
         </div>
-        <div class="w-full flex justify-between">
+        <div class="w-full flex justify-between items-center">
             <div class="font-semibold text-[14px]">{{ product.name }}</div> 
-            <div class="font-bold text-[14px]">${{ product.salePrice ? product.salePrice : product.price }}</div>
+            <div>
+                <div class="font-bold text-[14px]">${{ product.price.salePrice ? product.price.salePrice : product.price.price }}</div>
+                <div class="text-[gray] text-[12px]">Qty: {{ product.quantity }}</div>
+            </div>
         </div>
     </div>
 </template>

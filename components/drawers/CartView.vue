@@ -12,7 +12,7 @@
         <div class="w-full h-auto py-2">
             <Dialog>
                 <DialogTrigger as-child>
-                    <Button class="w-full" type="submit" :disabled="!products.length">Checkout <span class="px-[30px]">|</span>$158</Button>
+                    <Button class="w-full" type="submit" :disabled="!products.length">Checkout <span class="px-[30px]">|</span>${{ cartTotal() }}</Button>
                 </DialogTrigger>
                 <DialogContent class="md:w-auto lg:min-w-[500px] h-full md:h-auto lg:h-[500px] m-0">
                     <CheckoutView />
@@ -41,8 +41,8 @@ import CheckoutView from '~/components/modals/CheckoutView.vue'
 import { useCart } from '~/store/cartStore'
 import { storeToRefs } from 'pinia';
 
+const { cartTotal } = useCart()
 const { products } = storeToRefs(useCart())
-
 
 
 </script>

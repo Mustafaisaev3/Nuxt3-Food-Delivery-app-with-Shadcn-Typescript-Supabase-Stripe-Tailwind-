@@ -16,7 +16,8 @@ export type OrderType = {
         paymentMethod: string,
         cardNumber: string,
         expDate: string,
-        cvv: string
+        cvv: string,
+        cartTotal: number
     },
     status: any
 }

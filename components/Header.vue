@@ -8,7 +8,10 @@
             <IconCSS name="mdi:cog" size='25' class="text-[#111016]"/>
             <Sheet :open="showCart">
               <SheetTrigger as-child>
-                <IconCSS name="mdi:cart-outline" size='25' class="text-[#111016] cursor-pointer" @click="openCart"/>
+                <div class="relative">
+                  <IconCSS name="mdi:cart-outline" size='25' class="text-[#111016] cursor-pointer" @click="openCart"/>
+                  <Badge v-if="cartCount()" class="w-[15px] h-[15px] absolute -top-[5px] -right-[5px] text-[10px] flex items-center justify-center bg-green-500">{{ cartCount() }}</Badge>
+                </div>
               </SheetTrigger>
               <SheetContent class="flex flex-col">
                 <SheetHeader>
@@ -41,12 +44,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { X } from 'lucide-vue-next'
+import { Badge } from '@/components/ui/badge'
 import CartView from '~/components/drawers/CartView.vue'
 import { useUi } from '~/store/uiStore'
+import { useCart } from '~/store/cartStore'
 import { storeToRefs } from 'pinia';
 
 const { openCart, closeCart } = useUi()
+const { cartCount } = useCart()
 const { showCart } = storeToRefs(useUi())
 
 </script>

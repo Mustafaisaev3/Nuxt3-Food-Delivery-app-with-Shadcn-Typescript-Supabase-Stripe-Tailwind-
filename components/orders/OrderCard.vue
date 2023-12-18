@@ -1,19 +1,14 @@
 <template>
-    <Card class="w-full md:max-w-[300px] h-auto overflow-hidden p-2" :style="{background: order.status.background}">
+    <Card class="w-full md:max-w-[300px] h-auto overflow-hidden p-2 flex flex-col" :style="{background: order.status.background}">
         <CardHeader>
             <div class="flex justify-between">
                 <div class="max-w-[100px] text-sm overflow-hidden">№ {{ orderId }}</div>
                 <OrderStatusChange />
             </div>
         </CardHeader>
-        <CardContent>
+        <CardContent class=" flex-1">
             <div class="flex flex-col gap-2 relative rounded-md overflow-hidden">
                 <OrderProductItem v-for="product in order.products" :product="product"/>
-                <div class="order-shadow w-full h-full absolute top-0 left-0 hover:flex items-center justify-center pb-2 hidden">
-                    <Button>
-                        SHOW
-                    </Button>
-                </div>
             </div>
         </CardContent>
         <CardFooter>
@@ -21,18 +16,32 @@
                 <div class="w-[30px] h-[30px]">
                     <img :src="order.status.icon" alt="status-img" :class="`object-cover text-[${order.status.color}]`">
                 </div>
-                <div class="w-[30px] h-[30px] rounded-md border border-[black] flex items-center justify-center cursor-pointer">
-                    <IconCss name="mdi:information-variant" />
-                </div>
+                <Dialog >
+                    <DialogTrigger as-child>
+                        <div class="w-[30px] h-[30px] rounded-md border border-[black] flex items-center justify-center cursor-pointer">
+                            <IconCss name="mdi:information-variant" />
+                        </div>
+                    </DialogTrigger>
+                    <DialogContent class="md:w-auto lg:min-w-[800px] h-full md:h-auto lg:h-[500px] m-0 p-0 border-none overflow-hidden" >
+                        <OrderInfoView :order="order" :style="{background: order.status.background}"/>
+                    </DialogContent>
+                </Dialog>
             </div>
         </CardFooter>
     </Card>
 </template>
 <script setup lang="ts">
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogHeader
+} from '@/components/ui/dialog'
 import { Card, CardHeader, CardFooter } from '../ui/card'
 import { Button } from '../ui/button';
 import OrderStatusChange from './OrderStatusChange.vue';
 import OrderProductItem from './OrderProductItem.vue';
+import OrderInfoView from '../modals/OrderInfoView.vue';
 const { order } = defineProps(['order'])
 
 const orderId = computed(() => {

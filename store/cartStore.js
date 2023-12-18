@@ -119,5 +119,25 @@ export const useCart = defineStore({
             }
         },
 
+        clearCart () {
+            this.products = []
+        },
+
+        cartTotal () {
+            let total = 0 
+            this.products.map((product) => {
+                return total += (product.price.salePrice ? (product.price.salePrice * product.quantity) : (product.price.price * product.quantity))
+            })
+            return total
+        },
+
+        cartCount () {
+            let total = 0 
+            this.products.map((product) => {
+                return total += product.quantity
+            })
+            return total
+        }
+
     }
 })

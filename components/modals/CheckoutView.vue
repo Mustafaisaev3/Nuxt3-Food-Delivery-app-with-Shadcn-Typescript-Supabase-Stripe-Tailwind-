@@ -75,6 +75,7 @@ import { OrderStatusTypes } from '~/utils/order-status-types'
 const { toast } = useToast()
 const { closeCart, addNotification } = useUi()
 const { addOrder } = useOrders()
+const { clearCart, cartTotal } = useCart()
 const { products } = storeToRefs(useCart())
 
 enum STEPS {
@@ -112,6 +113,7 @@ const checkout = () => {
     }
 
     addOrder(order)
+    clearCart()
     addNotification({type: 'success', message: 'Order placed'})
 }
 
@@ -189,7 +191,8 @@ const formData = reactive({
   paymentMethod: '',
   cardNumber: '',
   expDate: '',
-  cvv: ''
+  cvv: '',
+  cartTotal: cartTotal(),
 });
 
 const rules = computed(() => {
@@ -234,6 +237,8 @@ const rules = computed(() => {
     },
   };
 });
+
+console.log(cartTotal(), 'total')
 
 const v$ = useVuelidate(rules, formData);
 
