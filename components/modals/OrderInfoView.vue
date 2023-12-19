@@ -48,7 +48,12 @@
             <Button variant="red">
                 <IconCss name="mdi:delete" class="text-white" />
             </Button>
-            <Select @update:model-value="orderStatus">
+            <Dropdown 
+                :defaultValue="order.status" 
+                :options="OrderStatusTypes"
+                @getValue="(val) => changeOrderStatus(order.id, val)"
+            />
+            <!-- <Select @update:model-value="orderStatus">
                 <SelectTrigger class="w-[180px]">
                     <SelectValue placeholder="Order Status" />
                 </SelectTrigger>
@@ -64,7 +69,7 @@
                         </SelectItem>
                     </SelectGroup>
                 </SelectContent>
-            </Select>
+            </Select> -->
         </div>
     </div>
 </template>
@@ -73,9 +78,12 @@
 import { ref, watch } from 'vue'
 import OrderProductItem from '../orders/OrderProductItem.vue';
 import Button from '../ui/button/Button.vue';
+import Dropdown from '../ui/dropdown/Dropdown.vue'
 import { PaymentMethods } from '~/data/payment'
 import { ShippingMethods } from '~/data/shipping'
+import { useOrders } from '~/store/orderStore'
 
+const { changeOrderStatus } = useOrders()
 
 const { order } = defineProps(['order'])
 

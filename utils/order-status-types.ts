@@ -29,7 +29,7 @@ export const OrderStatusTypes = [
         id: '3',
         title: 'delivery',
         color: '#ffea2d',
-        background: '#e62dff4d',
+        background: '#ffea2d38',
         // icon: 'mdi:truck-delivery-outline'
         icon: '/images/order-status/delivery.svg'
     },
@@ -37,7 +37,7 @@ export const OrderStatusTypes = [
         id: '4',
         title: 'done',
         color: '#2dd5ff',
-        background: '#e62dff4d',
+        background: '#2dd5ff4f',
         // icons: 'mdi:check-outline',
         icon: '/images/order-status/check.svg'
     },
@@ -45,7 +45,7 @@ export const OrderStatusTypes = [
         id: '5',
         title: 'reject',
         color: '#ff4d4d',
-        background: '#e62dff4d',
+        background: '#ff4d4d82',
         // icons: 'mdi:clipboard-remove-outline'
         icon: '/images/order-status/reject.svg'
     },

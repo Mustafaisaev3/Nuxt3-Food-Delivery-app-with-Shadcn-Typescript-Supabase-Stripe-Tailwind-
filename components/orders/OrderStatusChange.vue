@@ -8,7 +8,7 @@
     <DropdownMenuContent>
       <DropdownMenuLabel>Status</DropdownMenuLabel>
       <DropdownMenuSeparator />
-      <DropdownMenuItem v-for="status in OrderStatusTypes">{{ status.title }}</DropdownMenuItem>
+      <DropdownMenuItem v-for="status in OrderStatusTypes" @click="() => changeOrderStatus(order.id, status)">{{ status.title }}</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
@@ -23,5 +23,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { OrderStatusTypes } from '~/utils/order-status-types';
+import { useOrders } from '~/store/orderStore'
 
+const { order } = defineProps(['order'])
+const { changeOrderStatus } = useOrders()
 </script>

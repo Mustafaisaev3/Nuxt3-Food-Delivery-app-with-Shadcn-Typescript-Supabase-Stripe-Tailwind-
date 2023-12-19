@@ -33,6 +33,8 @@ export const useOrders = defineStore({
         changeOrderStatus (orderId, status) {
             const targetOrder = this.orders.find((order) => order.id === orderId)
             targetOrder.status = status
+            console.log(targetOrder)
+            console.log(this.orders)
         }
 
     }

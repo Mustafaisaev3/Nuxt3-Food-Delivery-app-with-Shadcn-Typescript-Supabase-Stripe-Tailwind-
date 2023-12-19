@@ -3,7 +3,7 @@
         <CardHeader>
             <div class="flex justify-between">
                 <div class="max-w-[100px] text-sm overflow-hidden">№ {{ orderId }}</div>
-                <OrderStatusChange />
+                <OrderStatusChange :order="order" />
             </div>
         </CardHeader>
         <CardContent class=" flex-1">
@@ -22,7 +22,7 @@
                             <IconCss name="mdi:information-variant" />
                         </div>
                     </DialogTrigger>
-                    <DialogContent class="md:w-auto lg:min-w-[800px] h-full md:h-auto lg:h-[500px] m-0 p-0 border-none overflow-hidden" >
+                    <DialogContent class="md:w-auto lg:min-w-[800px] h-full md:h-auto lg:h-[500px] m-0 p-0 border-none" >
                         <OrderInfoView :order="order" :style="{background: order.status.background}"/>
                     </DialogContent>
                 </Dialog>
