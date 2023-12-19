@@ -27,6 +27,16 @@
             </Sheet>
         </div>
         <UserDropdown />
+        <Dropdown 
+          :defaultValue="{title: 'User 1', value: 'user_1'}" 
+          :options="[
+            {title: 'User 1', value: 'user_1'},
+            {title: 'User 2', value: 'user_2'},
+            {title: 'User 3', value: 'user_3'},
+            {title: 'User 4', value: 'user_4'},
+          ]"
+          @getValue="(val) => getActiveValue(val)"
+        />
     </div>
   </div>
 </template>
@@ -44,6 +54,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { Dropdown } from '@/components/ui/dropdown'
 import { Badge } from '@/components/ui/badge'
 import CartView from '~/components/drawers/CartView.vue'
 import { useUi } from '~/store/uiStore'
@@ -53,6 +64,10 @@ import { storeToRefs } from 'pinia';
 const { openCart, closeCart } = useUi()
 const { cartCount } = useCart()
 const { showCart } = storeToRefs(useUi())
+
+const getActiveValue = (val) => {
+  console.log(val)
+}
 
 </script>
 
