@@ -1,8 +1,9 @@
 <template>
   <div class="bg-white w-full h-[100px] border-b-[1px] border-[#e2e8f0] p-10 flex items-center justify-between">
-    <div class="text-[20px] font-bold">Header</div>
+    <div class="">        
+      <SearchInput placeholder="Search"/>
+    </div>
     <div class="flex items-center gap-6">
-        <SearchInput placeholder="Search"/>
         <div class="flex gap-4">
             <IconCSS name="mdi:bell" size='25' class="text-[#111016]" />
             <IconCSS name="mdi:cog" size='25' class="text-[#111016]"/>
@@ -27,16 +28,6 @@
             </Sheet>
         </div>
         <UserDropdown />
-        <Dropdown 
-          :defaultValue="{title: 'User 1', value: 'user_1'}" 
-          :options="[
-            {title: 'User 1', value: 'user_1'},
-            {title: 'User 2', value: 'user_2'},
-            {title: 'User 3', value: 'user_3'},
-            {title: 'User 4', value: 'user_4'},
-          ]"
-          @getValue="(val) => getActiveValue(val)"
-        />
     </div>
   </div>
 </template>
@@ -46,15 +37,11 @@ import SearchInput from '~/components/SearchInput.vue'
 import UserDropdown from '~/components/UserDropdown.vue'
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { Dropdown } from '@/components/ui/dropdown'
 import { Badge } from '@/components/ui/badge'
 import CartView from '~/components/drawers/CartView.vue'
 import { useUi } from '~/store/uiStore'
@@ -65,9 +52,6 @@ const { openCart, closeCart } = useUi()
 const { cartCount } = useCart()
 const { showCart } = storeToRefs(useUi())
 
-const getActiveValue = (val) => {
-  console.log(val)
-}
 
 </script>
 
