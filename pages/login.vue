@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full flex items-center justify-center relative">
         <img 
-          src="https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_1280.jpg" 
+          src="/images/login-bg.jpg" 
           alt="bg"
           class="w-full h-full absolute top-0 left-0 object-cover"
         >
