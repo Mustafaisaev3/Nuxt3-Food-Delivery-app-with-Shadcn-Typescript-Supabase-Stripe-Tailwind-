@@ -30,7 +30,7 @@
                     </DialogContent>
                 </Dialog>
             </div>
-            <Button size="lg" variant="product" class="w-full" @click="addProductToCart">
+            <Button size="lg" variant="product" class="w-full p-2" @click="addProductToCart">
                 Buy
             </Button>
             <div class="cursor-pointer" @click="consoleCart">

@@ -4,7 +4,7 @@
       <template v-slot:rightContent>
         <div class="flex gap-2">
           <!-- Recently Added -->
-          <Select>
+          <!-- <Select>
             <SelectTrigger class="w-[180px]">
               <SelectValue placeholder="Recently Added" />
             </SelectTrigger>
@@ -28,7 +28,7 @@
                 </SelectItem>
               </SelectGroup>
             </SelectContent>
-          </Select>
+          </Select> -->
           <!-- Recently Added -->
           <!-- Top Rated -->
           <Select v-model="filterProps.sort">

@@ -1,6 +1,6 @@
 <template>
   <DropdownMenu>
-    <DropdownMenuTrigger class="w-[180px] h-12 flex gap-1 justify-between items-center px-2 rounded-xl border-[1px] border-[#e2e8f0]">
+    <DropdownMenuTrigger class="w-[180px] h-12 flex gap-1 justify-between items-center px-2 rounded-xl border-[1px] border-[#e2e8f0]" :class="$attrs.class">
       <Avatar >
         <AvatarImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9r3ogaSmpwNYSaEKRifVaHjwmYsKSW7fC6Q&usqp=CAU" alt="@radix-vue" />
         <AvatarFallback>TU</AvatarFallback>

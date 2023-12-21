@@ -3,7 +3,7 @@
         <Heading :title="'Orders'">
             <template v-slot:rightContent>
                 <div class="flex gap-2">
-                <SearchInput placeholder="Order ID"/>
+                <!-- <SearchInput placeholder="Order ID"/> -->
                 <!-- Order Status Select-->
                 <Select>
                     <SelectTrigger class="w-[180px]">

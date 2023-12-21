@@ -6,6 +6,7 @@ export const useUi = defineStore({
     state: () => {
         return {
             showCart: false,
+            showMobileMenu: false,
 
             // Notification
             notifications: [],
@@ -25,6 +26,14 @@ export const useUi = defineStore({
         },
         closeCart () {
             this.showCart = false
+        },
+
+        // MobileMenu
+        openMobileMenu() {
+            this.showMobileMenu = true
+        },
+        closeMobileMenu () {
+            this.showMobileMenu = false
         },
 
         // Notifications
