@@ -53,6 +53,57 @@ const pizzas: ProductType[] = [
         ordered: 90,
         category: 'pizza'
     },
+    {
+        id: uuid(),
+        name: 'Four Cheese',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2020-10-001-5f8871e823a03.png?1609925862',
+        price: {
+            price: 8.30,
+        },
+        rating: 4.8,
+        item: 600,
+        ordered: 90,
+        category: 'pizza'
+    },
+    {
+        id: uuid(),
+        name: 'Teriyaki',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2020-10-017-5faa945a8a044.png?1609925848',
+        price: {
+            salePrice: 8.30,
+            price: 8.80,
+        },
+        rating: 4.8,
+        item: 600,
+        ordered: 90,
+        category: 'pizza'
+    },
+    {
+        id: uuid(),
+        name: 'Barbecue',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood011-5e3d18c7ef96a.png?1609925834',
+        price: {
+            salePrice: 8.30,
+            price: 8.80,
+        },
+        rating: 4.5,
+        item: 600,
+        ordered: 90,
+        category: 'pizza'
+    },
+    {
+        id: uuid(),
+        name: 'Caucasian',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood01817-5ccc06029202b.png?1609925832',
+        price: {
+            salePrice: 7.70,
+            price: 8.00,
+        },
+        rating: 4.4,
+        item: 600,
+        ordered: 90,
+        category: 'pizza'
+    },
 ]
 
 const sushi: ProductType[] = [
@@ -94,11 +145,143 @@ const sushi: ProductType[] = [
         ordered: 90,
         category: 'sushi'
     },
+    {
+        id: uuid(),
+        name: 'Baked roll',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/s-ugrem-i-omletom-627cec72d9039.png?1652366674',
+        price: {
+            salePrice: 8.40,
+            price: 8.65,
+        },
+        rating: 4.8,
+        item: 900,
+        ordered: 90,
+        category: 'sushi'
+    },
+    {
+        id: uuid(),
+        name: 'Baked tuna',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/s-tuncem-627cea1972141.png?1652366652',
+        price: {
+            price: 8.65,
+        },
+        rating: 4.8,
+        item: 900,
+        ordered: 90,
+        category: 'sushi'
+    },
+    {
+        id: uuid(),
+        name: 'Vesuvius',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/vezuvii-hot-roll-ish-5c6aa96c04854.png?1609925828',
+        price: {
+            salePrice: 8.20,
+            price: 8.85,
+        },
+        rating: 4.4,
+        item: 900,
+        ordered: 90,
+        category: 'sushi'
+    },
+    {
+        id: uuid(),
+        name: 'Unagi',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2021-05-004-6278d6e581122.png?1652086599',
+        price: {
+            salePrice: 8.50,
+            price: 8.75,
+        },
+        rating: 4.7,
+        item: 900,
+        ordered: 90,
+        category: 'sushi'
+    },
+    {
+        id: uuid(),
+        name: 'Krakatau ',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/krakatau-hot-roll-ish-5c6aaa71e111b.png?1609925766',
+        price: {
+            salePrice: 8.50,
+            price: 8.75,
+        },
+        rating: 4.7,
+        item: 900,
+        ordered: 90,
+        category: 'sushi'
+    },
+]
+
+const burgers: ProductType[] = [
+    {
+        id: uuid(),
+        name: 'Texas',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/burger-texas-605c987d156c5.png?1616683818',
+        price: {
+            salePrice: 6.50,
+            price: 6.90,
+        },
+        rating: 4.5,
+        item: 1000,
+        ordered: 100,
+        category: 'burger'
+    },
+    {
+        id: uuid(),
+        name: 'Black Chicken',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/black-chicken-burger-605c9903cee3d.png?1616683147',
+        price: {
+            salePrice: 7.20,
+            price: 7.50,
+        },
+        rating: 5.0,
+        item: 1000,
+        ordered: 100,
+        category: 'burger'
+    },
+    {
+        id: uuid(),
+        name: 'Chicken Hawaii',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/iinstafood05802-5d93125502af4.png?1609925794',
+        price: {
+            price: 7.50,
+        },
+        rating: 3.9,
+        item: 1000,
+        ordered: 100,
+        category: 'burger'
+    },
+    {
+        id: uuid(),
+        name: 'Blue Сheese',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood03110-5cfab2e1ca184.png?1609925776',
+        price: {
+            salePrice: 7.20,
+            price: 7.50,
+        },
+        rating: 4.9,
+        item: 1000,
+        ordered: 100,
+        category: 'burger'
+    },
+    {
+        id: uuid(),
+        name: 'French',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/burger-french-6278d3cb4f02b.png?1652085721',
+        price: {
+            salePrice: 7.60,
+            price: 8.00,
+        },
+        rating: 4.8,
+        item: 1000,
+        ordered: 100,
+        category: 'burger'
+    },
 ]
 
 const products = [
     ...pizzas,
-    ...sushi
+    ...sushi,
+    ...burgers
 ]
 
 export { products }

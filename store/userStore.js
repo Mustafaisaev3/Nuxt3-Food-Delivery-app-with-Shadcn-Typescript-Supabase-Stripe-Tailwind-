@@ -20,6 +20,7 @@ export const useUser = defineStore({
                 fax: '313131',
                 aboutMe: 'About Me)',
             },
+            wishlist: [],
             loading: false
         }
     },
@@ -27,6 +28,11 @@ export const useUser = defineStore({
     actions: {
         setUserData (userData) {
             this.user = userData
-        } 
+        },
+        
+        addToWishlist (id) {
+            if (this.wishlist.includes(id)) return
+            this.wishlist.push(id)
+        }
     }
 })

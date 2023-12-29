@@ -30,7 +30,10 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Chicago',
                 image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2023-04-028-644a7cbba473a.png?1682603542',
-                price: 7.50,
+                price: {
+                    salePrice: 7.50,
+                    price: 7.90
+                },
                 rating: 4.7,
                 item: 1200,
                 ordered: 60,
@@ -40,7 +43,10 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Sicilian',
                 image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2023-04-039-644a7bc059190.png?1682603270',
-                price: 8.20,
+                price: {
+                    salePrice: 8.10,
+                    price: 8.30,
+                },
                 rating: 4.6,
                 item: 900,
                 ordered: 90,
@@ -50,13 +56,31 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Avocado',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQs_9hT_X-HVX6uJ8AYxOi2C9hbkreEh1C67QvYyw1VxTgFAgHb-C4d6IyFOSLZ_62ouM&usqp=CAU',
-                price: 9.20,
+                price: {
+                    salePrice: 7.30,
+                    price: 7.80
+                },
                 rating: 4.7,
                 item: 1200,
                 ordered: 60,
                 category: 'sushi'
             },
         ],
+        orderInfo: {
+            firstName: 'Test',
+            lustName: 'User',
+            country: 'Italy',
+            city: 'Rome',
+            zip: '222222',
+            street: 'Sime',
+            appartment: '22/3',
+            shippingMethod: 'Fast',
+            paymentMethod: 'paypal',
+            cardNumber: '2222222222222222',
+            expDate: '12/24',
+            cvv: '234',
+            cartTotal: 83
+        },
         status: {
             id: '1',
             title: 'new',
@@ -73,7 +97,10 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Chicago',
                 image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2023-04-028-644a7cbba473a.png?1682603542',
-                price: 7.50,
+                price: {
+                    salePrice: 8.10,
+                    price: 8.30,
+                },
                 rating: 4.7,
                 item: 1200,
                 ordered: 60,
@@ -83,7 +110,10 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Sicilian',
                 image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2023-04-039-644a7bc059190.png?1682603270',
-                price: 8.20,
+                price: {
+                    salePrice: 8.10,
+                    price: 8.30,
+                },
                 rating: 4.6,
                 item: 900,
                 ordered: 90,
@@ -93,13 +123,31 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Avocado',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQs_9hT_X-HVX6uJ8AYxOi2C9hbkreEh1C67QvYyw1VxTgFAgHb-C4d6IyFOSLZ_62ouM&usqp=CAU',
-                price: 9.20,
+                price: {
+                    salePrice: 8.10,
+                    price: 8.30,
+                },
                 rating: 4.7,
                 item: 1200,
                 ordered: 60,
                 category: 'sushi'
             },
         ],
+        orderInfo: {
+            firstName: 'Test',
+            lustName: 'User',
+            country: 'Italy',
+            city: 'Rome',
+            zip: '222222',
+            street: 'Sime',
+            appartment: '22/3',
+            shippingMethod: 'Fast',
+            paymentMethod: 'paypal',
+            cardNumber: '2222222222222222',
+            expDate: '12/24',
+            cvv: '234',
+            cartTotal: 83
+        },
         status: 
         {
             id: '2',
@@ -117,7 +165,10 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Chicago',
                 image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2023-04-028-644a7cbba473a.png?1682603542',
-                price: 7.50,
+                price: {
+                    salePrice: 7.50,
+                    price: 7.90
+                },
                 rating: 4.7,
                 item: 1200,
                 ordered: 60,
@@ -127,7 +178,10 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Sicilian',
                 image: 'https://instafood.com.ua/images/full_shop_product_pc/instafood-2023-04-039-644a7bc059190.png?1682603270',
-                price: 8.20,
+                price: {
+                    salePrice: 7.50,
+                    price: 7.90
+                },
                 rating: 4.6,
                 item: 900,
                 ordered: 90,
@@ -137,13 +191,31 @@ export const orders: OrderType[] = [
                 id: uuid(),
                 name: 'Avocado',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQs_9hT_X-HVX6uJ8AYxOi2C9hbkreEh1C67QvYyw1VxTgFAgHb-C4d6IyFOSLZ_62ouM&usqp=CAU',
-                price: 9.20,
+                price: {
+                    salePrice: 7.50,
+                    price: 7.90
+                },
                 rating: 4.7,
                 item: 1200,
                 ordered: 60,
                 category: 'sushi'
             },
         ],
+        orderInfo: {
+            firstName: 'Test',
+            lustName: 'User',
+            country: 'Italy',
+            city: 'Rome',
+            zip: '222222',
+            street: 'Sime',
+            appartment: '22/3',
+            shippingMethod: 'Fast',
+            paymentMethod: 'paypal',
+            cardNumber: '2222222222222222',
+            expDate: '12/24',
+            cvv: '234',
+            cartTotal: 83
+        },
         status: {
             id: '1',
             title: 'new',
