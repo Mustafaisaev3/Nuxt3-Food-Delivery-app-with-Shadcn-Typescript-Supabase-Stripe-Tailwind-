@@ -30,9 +30,22 @@ export const useUser = defineStore({
             this.user = userData
         },
         
-        addToWishlist (id) {
-            if (this.wishlist.includes(id)) return
-            this.wishlist.push(id)
+        addToWishlist (productId) {
+            // If product in Wishlist - delete product 
+            if (this.wishlist.includes(productId)) {
+                const filteredWishlist = this.wishlist.filter(ProductInWishlistId => {
+                    return ProductInWishlistId != productId
+                })
+
+                return this.wishlist = filteredWishlist
+            }
+
+            // Otherwise add product to wishlist 
+            this.wishlist.push(productId)
+        },
+
+        isProductInWishlist (productId) {
+            return !!this.wishlist.includes(productId)
         }
     }
 })

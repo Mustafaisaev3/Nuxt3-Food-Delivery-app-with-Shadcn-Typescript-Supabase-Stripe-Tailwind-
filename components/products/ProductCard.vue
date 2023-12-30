@@ -33,8 +33,9 @@
             <Button size="lg" variant="product" class="w-full p-2" @click="addProductToCart">
                 Buy
             </Button>
-            <div class="cursor-pointer" @click="consoleCart">
-                <IconCss name="mdi:cards-heart" size='25' class="text-[#e54343]"/>
+            <div class="cursor-pointer" @click="addProductToWishlist">
+                <IconCss v-if="isProductInWishlistStatus" name="mdi:cards-heart" size='25' class="text-[#e54343]"/>
+                <IconCss v-else name="mdi:cards-heart-outline" size='25'/>
             </div>
         </div>
     </Card>
@@ -58,9 +59,11 @@ import {
 import { storeToRefs } from "pinia";
 import { useUi } from "~/store/uiStore";
 import { useCart } from "~/store/cartStore";
+import { useUser } from "~/store/userStore";
 
 const { addToCart } = useCart()
 const { addNotification } = useUi()
+const { addToWishlist, isProductInWishlist } = useUser()
 
 interface ProductCardInterface {
     product: ProductType
@@ -74,7 +77,14 @@ const addProductToCart = () => {
     addNotification({type: 'success', message: 'Product added to cart'})
 }
 
-const consoleCart = () => console.log(products)
+const addProductToWishlist = () => {
+    addToWishlist(product.id)
+}
+
+const isProductInWishlistStatus = computed(() => {
+    return isProductInWishlist(product.id)
+})
+
 
 </script>
 
