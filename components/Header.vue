@@ -31,11 +31,33 @@
     <div class="flex items-center gap-6">
         <div class="flex gap-4">
             <div class="hidden md:block">
-              <IconCSS name="mdi:bell" size='25' class="text-[#111016] hover:text-[#111016a9]" />
+              <IconCSS name="mdi:bell-outline" size='25' class="text-[#111016] hover:text-[#111016a9]" />
             </div>
-            <div class="hidden md:block">
-              <IconCSS name="mdi:cog" size='25' class="text-[#111016] hover:text-[#111016a9] hidden"/>
-            </div>
+            <!-- <div class="hidden md:block">
+              <IconCSS name="mdi:cards-heart-outline" size='25' class="text-[#111016] hover:text-[#111016a9] hidden"/>
+            </div> -->
+            <Sheet>
+              <SheetTrigger as-child>
+                <div class="relative">
+                  <IconCSS name="mdi:cards-heart-outline" size='25' class="text-[#111016] hover:text-[#111016a9] hidden"/>
+                  <Badge v-if="wishlistProductCount()" class="w-[15px] h-[15px] absolute -top-[5px] -right-[5px] text-[10px] flex items-center justify-center bg-[#e54343]">{{ wishlistProductCount() }}</Badge>
+                </div>
+              </SheetTrigger>
+              <SheetContent class="flex flex-col">
+                <!-- <SheetHeader>
+                  <SheetTitle class="flex justify-between">
+                    <div>Cart</div>
+                    <div class="border-[1px] hover:border-[2px] border-[#464646] rounded-md w-6 h-6 flex items-center justify-center cursor-pointer" @click="closeCart" >
+                      <IconCss name="mdi:close" class="text-sm" />
+                    </div>
+                  </SheetTitle>
+                </SheetHeader> -->
+                <WishlistView />
+                <SheetClose asChild>
+                  <Button type="submit">Close Wishlist</Button>
+                </SheetClose>
+              </SheetContent>
+            </Sheet>
             <Sheet :open="showCart">
               <SheetTrigger as-child>
                 <div class="relative">
@@ -75,13 +97,16 @@ import {
 } from '@/components/ui/sheet'
 import { Badge } from '@/components/ui/badge'
 import CartView from '~/components/drawers/CartView.vue'
+import WishlistView from '~/components/drawers/WishlistView.vue'
 import MobileMenu from './drawers/MobileMenu.vue'
 import { useUi } from '~/store/uiStore'
 import { useCart } from '~/store/cartStore'
+import { useUser } from '~/store/userStore'
 import { storeToRefs } from 'pinia';
 
 const { openCart, closeCart, openMobileMenu, closeMobileMenu } = useUi()
 const { cartCount } = useCart()
+const { wishlistProductCount } = useUser()
 const { showCart, showMobileMenu } = storeToRefs(useUi())
 
 

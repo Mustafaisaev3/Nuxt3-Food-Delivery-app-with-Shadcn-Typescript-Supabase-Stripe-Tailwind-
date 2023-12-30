@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { products } from '~/data/products'
 
 export const useUser = defineStore({
     id: 'user-store',
@@ -46,6 +47,20 @@ export const useUser = defineStore({
 
         isProductInWishlist (productId) {
             return !!this.wishlist.includes(productId)
+        },
+
+        wishlistProductCount () {
+            return this.wishlist.length
+        },
+
+        getWishlistProducts () {
+            const productsArr = products.filter((product) => {
+                if (this.wishlist.includes(product.id)) {
+                    return product
+                }
+            })
+
+            return productsArr
         }
     }
 })
