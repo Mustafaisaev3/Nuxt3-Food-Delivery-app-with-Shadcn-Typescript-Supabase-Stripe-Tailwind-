@@ -33,9 +33,6 @@
             <div class="hidden md:block">
               <IconCSS name="mdi:bell-outline" size='25' class="text-[#111016] hover:text-[#111016a9]" />
             </div>
-            <!-- <div class="hidden md:block">
-              <IconCSS name="mdi:cards-heart-outline" size='25' class="text-[#111016] hover:text-[#111016a9] hidden"/>
-            </div> -->
             <Sheet>
               <SheetTrigger as-child>
                 <div class="relative">
@@ -44,14 +41,6 @@
                 </div>
               </SheetTrigger>
               <SheetContent class="flex flex-col">
-                <!-- <SheetHeader>
-                  <SheetTitle class="flex justify-between">
-                    <div>Cart</div>
-                    <div class="border-[1px] hover:border-[2px] border-[#464646] rounded-md w-6 h-6 flex items-center justify-center cursor-pointer" @click="closeCart" >
-                      <IconCss name="mdi:close" class="text-sm" />
-                    </div>
-                  </SheetTitle>
-                </SheetHeader> -->
                 <WishlistView />
                 <SheetClose asChild>
                   <Button type="submit">Close Wishlist</Button>

@@ -1,11 +1,15 @@
 <template>
     <div class="w-full h-full flex flex-col lg:flex-row">
-        <div class="w-full lg:w-1/2">
+        <div class="w-full lg:max-h-[450px] lg:w-1/2 flex items-center justify-center relative">
             <img 
               :src="product.image" 
               alt="product-img"
               class="object-contain w-auto h-full p-2"
             />
+            <div class="absolute left-2 top-2 cursor-pointer" @click="addProductToWishlist">
+                <IconCss v-if="isProductInWishlistStatus" name="mdi:cards-heart" size='25' class="text-[#e54343]"/>
+                <IconCss v-else name="mdi:cards-heart-outline" size='25'/>
+            </div>
         </div>
         <div class="w-full lg:max-w-[50%] px-4 flex flex-col">
             <div class="flex-1 pt-2">
@@ -43,7 +47,9 @@ import { useCart } from '~/store/cartStore'
 import Counter from '~/components/shared/Counter.vue'
 import Button from '../ui/button/Button.vue';
 import OptionTabs from '../shared/OptionTabs.vue';
+import { useUser } from '~/store/userStore';
 
+const { addToWishlist, isProductInWishlist } = useUser()
 const { addToCart } = useCart()
 const { product } = defineProps(['product'])
 
@@ -56,6 +62,14 @@ const setProductCount = (count: number) => {
 const addProductToCart = () => {
     addToCart(product, productCount.value)
 }
+
+const addProductToWishlist = () => {
+    addToWishlist(product.id)
+}
+
+const isProductInWishlistStatus = computed(() => {
+    return isProductInWishlist(product.id)
+})
 
 </script>
 

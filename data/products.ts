@@ -278,10 +278,76 @@ const burgers: ProductType[] = [
     },
 ]
 
+const drinks: ProductType[] = [
+    {
+        id: uuid(),
+        name: 'Coca-Cola',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/cc-glass-bottle-250ml-c-kryshkoy-5c63e126d34be.png?1609925870',
+        price: {
+            salePrice: 1.50,
+            price: 1.90,
+        },
+        rating: 4.5,
+        item: 1000,
+        ordered: 100,
+        category: 'drink'
+    },
+    {
+        id: uuid(),
+        name: 'Fanta Orange',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/fanta-orange-05l-pet-60ec25d72fd36.png?1626106119',
+        price: {
+            salePrice: 1.20,
+            price: 1.60,
+        },
+        rating: 4.7,
+        item: 1000,
+        ordered: 100,
+        category: 'drink'
+    },
+    {
+        id: uuid(),
+        name: 'Burn',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/intl-250ml-burn-original-5c63e450bf660.png?1609925842',
+        price: {
+            price: 2.90,
+        },
+        rating: 4.2,
+        item: 1000,
+        ordered: 100,
+        category: 'drink'
+    },
+    {
+        id: uuid(),
+        name: 'Sprite',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/spr-500ml-b-5c63eb24a3a41.png?1609925856',
+        price: {
+            price: 2.40,
+        },
+        rating: 4.7,
+        item: 1000,
+        ordered: 100,
+        category: 'drink'
+    },
+    {
+        id: uuid(),
+        name: 'Fanta',
+        image: 'https://instafood.com.ua/images/full_shop_product_pc/fanta-orange-05l-pet-60ec25d72fd36.png?1626106119',
+        price: {
+            price: 2.50,
+        },
+        rating: 4.8,
+        item: 1000,
+        ordered: 100,
+        category: 'drink'
+    },
+]
+
 const products = [
     ...pizzas,
     ...sushi,
-    ...burgers
+    ...burgers,
+    ...drinks
 ]
 
 export { products }
